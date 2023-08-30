@@ -23,5 +23,3 @@ const UseStateObject = () => {
 };
 
 export default UseStateObject;
-
-//USE STATE GOTCHAAAAAAAAAA

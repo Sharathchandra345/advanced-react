@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const UseStateGotcha = () => {
   const [value, setValue] = useState(0);
@@ -9,7 +9,7 @@ const UseStateGotcha = () => {
     //   setValue(value + 1);
     // }, 3000);
     setTimeout(() => {
-      console.log('clicked the button');
+      console.log("clicked the button");
       setValue((currentState) => {
         return currentState + 1;
       });
@@ -18,7 +18,7 @@ const UseStateGotcha = () => {
   return (
     <div>
       <h1>{value}</h1>
-      <button className='btn' onClick={handleClick}>
+      <button className="btn" onClick={handleClick}>
         increase
       </button>
     </div>
