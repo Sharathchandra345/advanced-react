@@ -142,3 +142,101 @@ const FetchData = () => {
 };
 export default FetchData;
 ```
+
+Data Fetching :
+
+- usually three options
+
+  - loading - waiting for data to arrive (display loading state)
+  - error - there was an error (display error message)
+  - success - received data (display data)
+
+- DON'T ADD fetchData to dependency array !!!
+- IT WILL TRIGGER INFINITE LOOP !!!
+
+## Truthy and Falsy Values
+
+In JavaScript, a value is considered "truthy" if it is evaluated to true when used in a boolean context. A value is considered "falsy" if it is evaluated to false when used in a boolean context.
+
+Here is a list of values that are considered falsy in JavaScript:
+
+false
+0 (zero)
+"" (empty string)
+null
+undefined
+NaN (Not a Number)
+All other values, including objects and arrays, are considered truthy.
+
+## Short Circuit Evaluation
+
+In JavaScript, short-circuit evaluation is a technique that allows you to use logical operators (such as && and ||) to perform conditional evaluations in a concise way.
+
+The && operator (logical AND) returns the first operand if it is "falsy", or the second operand if the first operand is "truthy".
+
+For example:
+
+```js
+const x = 0;
+const y = 1;
+
+console.log(x && y); // Output: 0 (the first operand is falsy, so it is returned)
+console.log(y && x); // Output: 0 (the second operand is falsy, so it is returned)
+```
+
+The || operator (logical OR) returns the first operand if it is "truthy", or the second operand if the first operand is "falsy".
+
+For example:
+f
+
+```js
+const x = 0;
+const y = 1;
+
+console.log(x || y); // Output: 1 (the first operand is falsy, so the second operand is returned)
+console.log(y || x); // Output: 1 (the first operand is truthy, so it is returned)
+```
+
+## Logical Operator
+
+The ! operator is a logical operator in JavaScript that negates a boolean value. It is equivalent to the not operator in other programming languages.
+
+For example:
+
+```js
+let isTrue = true;
+let isFalse = false;
+
+console.log(!isTrue); // outputs: false
+console.log(!isFalse); // outputs: true
+```
+
+You can use the ! operator to test if a value is not truthy or falsy:
+
+## Ternary Operator
+
+Vanilla JS
+
+In JavaScript, the ternary operator is a way to concisely express a simple conditional statement. It is often called the "conditional operator" or the "ternary conditional operator".
+
+Here is the basic syntax for using the ternary operator:
+
+```js
+condition ? expression1 : expression2;
+```
+
+If condition is truthy, the operator will return expression1. If condition is falsy, it will return expression2.
+
+-Use effect doesnt work in conditional statements , it renders everytime
+
+## You Might Not Need an Effect
+
+[You Might Not Need an Effect](https://beta.reactjs.org/learn/you-might-not-need-an-effect)
+
+- will still utilize useEffect
+- there is still plenty of code using useEffect
+
+- fetching data
+  replaced by libraries - react query, rtk query, swr or next.js
+
+## Project Structure - Default Export
