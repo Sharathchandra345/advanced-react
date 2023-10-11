@@ -239,4 +239,20 @@ If condition is truthy, the operator will return expression1. If condition is fa
 - fetching data
   replaced by libraries - react query, rtk query, swr or next.js
 
-## Project Structure - Default Export
+## Use Ref
+
+- lot like use state , preserves values between renders but does not trigger re render like when we use with usestate.
+
+## Custom Hooks
+
+- same rules as regular hooks
+- reuse functionality
+- re-use functionality
+
+### Rules for custom hooks
+
+- must be named with "use" prefix and capitalized first letter (e.g., `useFriendStatus`)
+- cannot call other hooks inside them
+- should return values from React state variables
+
+- data:user .....This means i want to call this user only in the particular component
