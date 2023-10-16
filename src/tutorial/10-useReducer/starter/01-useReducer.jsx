@@ -1,26 +1,36 @@
 import React, { useReducer } from "react";
 import { useState } from "react";
 import { data } from "../../../data";
-// const defaultState = { people: data };
-// const reducer = () => {};
-const ReducerBasics = () => {
-  // useReducer(reducer, defaultState);
+import { CLEAR_LIST, RESET_LIST, REMOVE_ITEM } from "./actions";
+import reducer from "./reducer";
 
-  const [people, setPeople] = React.useState(data);
+const defaultState = {
+  people: data,
+  isLoading: false,
+};
+
+const ReducerBasics = () => {
+  const [state, dispatch] = useReducer(reducer, defaultState);
+
+  // const [people, setPeople] = useState(data);
 
   const removeItem = (id) => {
-    let newPeople = people.filter((person) => person.id !== id);
-    setPeople(newPeople);
+    dispatch({ type: REMOVE_ITEM, payload: { id } });
+    // let newPeople = people.filter((person) => person.id !== id);
+    // setPeople(newPeople);
   };
   const clearList = () => {
-    setPeople([]);
+    dispatch({ type: CLEAR_LIST });
+    // setPeople([]);
   };
   const resetList = () => {
-    setPeople(data);
+    dispatch({ type: RESET_LIST });
+    // setPeople(data);
   };
+  console.log(state);
   return (
-    <div>
-      {people.map((person) => {
+    <div className="center">
+      {state.people.map((person) => {
         const { id, name } = person;
         return (
           <div key={id} className="item">
@@ -29,7 +39,7 @@ const ReducerBasics = () => {
           </div>
         );
       })}
-      {people.length < 1 ? (
+      {state.people.length < 1 ? (
         <button
           className="btn"
           style={{ marginTop: "2rem" }}
