@@ -260,3 +260,13 @@ If condition is truthy, the operator will return expression1. If condition is fa
 ## Use Reducer Hook
 
 - can call this anything doesnt need to be reducer only
+
+## Performance
+
+When Component Re-Renders :
+
+- When the component's state or props change, React will re-render the component to reflect these changes.
+
+- When the parent element re-renders, even if the component's state or props have not changed.
+
+- React.memo(Component) - returns memoized component
